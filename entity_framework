@@ -1,0 +1,11 @@
+install entity framework : 
+
+dotnet tool install --global dotnet-ef
+
+rider -> nugget, add entity frameowrk , add to this project
+
+il faut se placer dnas le repertoire ou se toruve le fichier file.csproj.
+
+puis executer dotnet ef dbcontext scaffold "Server=(localdb)\MSSQLLocalDB;Integrated Security=true;" Microsoft.EntityFrameworkCore.SqlServer -c AcmeDataContext
+
+qui va généré le fichier pour nous
