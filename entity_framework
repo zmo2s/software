@@ -9,3 +9,34 @@ il faut se placer dnas le repertoire ou se toruve le fichier file.csproj.
 puis executer dotnet ef dbcontext scaffold "Server=(localdb)\MSSQLLocalDB;Integrated Security=true;" Microsoft.EntityFrameworkCore.SqlServer -c AcmeDataContext
 
 qui va généré le fichier pour nous
+
+la database est à droite pour configuré mysql deuximeme onglet a droite 
+
+on configure mysql de rider via MySql.Data.EntityFrameworkCore
+
+mot clés : configuration rider mysql
+https://dev.mysql.com/doc/connector-net/en/connector-net-entityframework-core-scaffold-example.html
+https://blog.jetbrains.com/dotnet/2017/08/09/running-entity-framework-core-commands-rider/
+
+edit -> ConsoleProjet.csproj : 
+
+
+ <ItemGroup>
+        <PackageReference Include="EntityFramework" Version="6.3.0" />
+
+
+   
+       
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0" />
+        <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.20" />
+
+     
+       
+    </ItemGroup>
+
+
+
+
+la ligne de ocmmande de la connexion : dotnet ef dbcontext scaffold "server=127.0.0.1;port=3306;user=phpmyadmin;password=Password1011%;database=quiz" MySql.Data.EntityFrameworkCore -o quiz -f --verbose
+
