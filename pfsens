@@ -1,0 +1,48 @@
+wan:192.168.166.4
+lan:192.168.53.1
+
+
+pfsens configuration : 
+
+vérifier que les adresse mac correspondent avecles interfaces , vlan non aucun
+
+distribuer pour le wan :
+
+ip : 192.168.166.4
+gateway : 192.168.166.2
+
+
+pour les autres périphérique 
+
+
+
+l'ip correspond a l'interface de la passerelle et non a l'ip de la machine  192.168.53.254
+
+
+LAN :
+ip : 192.168.53.254
+
+
+
+on vérifie dans statut gateway que les gateway sont en "on"
+
+
+règle parmis les 3 option pour nat unbound ajouter des règles pour tout laisser passer pour chaque périphérique
+pour le pat etc..
+
+pour squid il faut lancer le script perl
+perl lightparser.pl
+
+dans usr/share/lightsquid/lightparser.pl
+
+si cela ne marche pas : 
+
+possible aussi qu'il faillent changer e fcihier de ocnfiguration dans etc / squidlight la valeur  à 1 si cela ne marche pas qui est par défaut a 0 .
+
+path :  /usr/local/etc/lightsquid/lightsquid.cfg
+part of lightsquid.cfg
+
+#if you want user traffic GRAPHIC report, set it in 1
+#WARNING !!!, need libgd, GD.PM & other external modules !!!
+#please run check-setup.pl for check library !!!!
+$graphreport         = 0; changer ici la valeur 0 à 1 
