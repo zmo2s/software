@@ -1,0 +1,10 @@
+https://www.funkyspacemonkey.com/how-to-install-macos-catalina-on-linux
+
+I get the same problem i did in few step :
+1 - run your vm
+2 - download clover configurator https://mackie100projects.altervista.org/download-clover-configurator/
+3 - open clover configurator choose efi partition of your os(for me apple) between 200 and 256 Mb
+4- Edit the the file config.plist in folder CLOVER in your partition efi, change GUI resolution for me that was 1280x 720 so i change to 1920x1080
+
+
+bash virtio.sh run the application
