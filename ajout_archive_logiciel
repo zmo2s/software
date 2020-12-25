@@ -1,0 +1,53 @@
+exemple d'ajout de logiciel qui est dans uen archive sur linux :
+
+
+on extrait l'archive exemple : 
+
+
+node-v10.1.0-linux-x64.tar.xz
+
+
+on trouve : 
+
+
+a l'intérieur de node-v10.1.0-linux-x64
+
+on va copier le dossier bin dans opt ce qui est équivalent a copier les fichiers d'installation de node
+
+opt qui sera l'équivalent de programmesFiles sur windows
+
+
+Dans le répertoire opt on créer un dossier NodeJS
+
+Maintenant on copie le repertoire bin de l'archive (node-v10.1.0-linux-x64) dans le dossier NodeJS
+
+On n'oublie pas de configuré les permission du dossiers NodeJS 
+
+sudo chmod -R 755 NodeJS
+
+-----
+
+
+Maintenant il nous reste à ajouter le chemin de node dnas le PATH.
+Pour que l'on puisse utiliser node depuis le terminal.
+
+Dans un premier temps on ajoute le chemin /opt/NodeJS dans notre variable d'environement PATH.
+Puis on actualise notre fichier de configuration le fichier bashrc.
+
+pour ouvrir le fichier : 
+
+nano ~/.bashrc 
+ou bien
+vim ~/.bashrc
+
+ajouter à la suite du code existant la ligne suivante, copier coller le code suivant : 
+
+export PATH=/opt/NodeJS:PATH
+
+pour réactualiser le fichier bashrc : 
+
+source ~/.bashrc
+
+
+
+
