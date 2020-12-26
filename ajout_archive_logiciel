@@ -42,7 +42,7 @@ vim ~/.bashrc
 
 ajouter à la suite du code existant la ligne suivante, copier coller le code suivant : 
 
-export PATH=/opt/NodeJS:PATH
+export PATH="$PATH:/opt/NodeJS"
 
 pour réactualiser le fichier bashrc : 
 
