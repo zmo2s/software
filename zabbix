@@ -28,3 +28,7 @@ machine vm login : a
 password : a
 
 commande de log pour voir que tout tourne bien : tail -f /var/log/zabbix-server/zabbix_server.log
+acces exemple : http://192.168.1.82/zabbix/
+
+mysql -uzabbix -p zabbix
+password : Azerty12345
