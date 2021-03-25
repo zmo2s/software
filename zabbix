@@ -1,0 +1,30 @@
+zabbix 
+- probleme entre les db maria et zabbix une fois que zabbix est installer il faut importer mariadb dans zabbi
+On Zabbix server host import initial schema and data :
+zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix 
+
+Il y a surement un conflit car la base de donnée de zabbix a été rempli il faut supprimé la database 
+zabbix ( drop database zabix outil de bug  ... select database(); show tables;
+
+-probleme de deconnexion toute les 10 seconde probablement mauvais mdp pour la db ( ici Azerty12345 )
+
+
+il faut également ouvrir le port 80 : 
+
+sudo ufw allow 80/tcp 
+
+et le port t 10050 et 10051  en tcp
+
+accés a zabix : 
+
+username : Admin
+password : zabbix
+http://server_ip_or_dns_name/zabbix
+
+lien utile : https://bestmonitoringtools.com/how-to-install-zabbix-server-on-debian/
+lien utile debug : https://bobcares.com/blog/zabbix-server-is-not-running/
+
+machine vm login : a 
+password : a
+
+commande de log pour voir que tout tourne bien : tail -f /var/log/zabbix-server/zabbix_server.log
