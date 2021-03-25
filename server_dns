@@ -1,0 +1,8 @@
+ouvrir le port udp poru que les 2 server maitre et esclave communique et on a besoin du port tcp 53 pour que un server simple communique.
+
+
+iptables -I INPUT 2 -p tcp --dport 80 -j ACCEPT
+iptables -I INPUT 2 -p tcp --dport 53 -j ACCEPT et de meme pour le udp
+ne pas oublier de save iptables save
+
+et on choisit un host sur lequelle va etre envoyer le site , choisir un pc existant 
