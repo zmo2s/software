@@ -35,7 +35,10 @@ edit -> ConsoleProjet.csproj :
        
     </ItemGroup>
 
-
+important ! 
+ dotnet add package MySql.Data.EntityFrameworkCore --version 8.0.20
+ 
+ les version supérieurs ont plusieurs bug notament datetime.
 
 
 la ligne de ocmmande de la connexion : dotnet ef dbcontext scaffold "server=127.0.0.1;port=3306;user=phpmyadmin;password=Password1011%;database=quiz" MySql.Data.EntityFrameworkCore -o quiz -f --verbose
