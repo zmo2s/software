@@ -34,6 +34,22 @@ sudo systemctl restart nagios.service
   sudo systemctl restart apache2
   
   
+  install pc with nagios server : 
+  https://assets.nagios.com/downloads/nagiosxi/docs/Installing_The_XI_Linux_Agent.pdf
+   sudo systemctl status xinetd.service
+  error already in use : 
+ 
+  
+  if bug : 
+    sudo apt-get install -y net-tools
+  port : 5666
+  sudo netstat -paunt
+  kill -9 pid (pid sur le port 5666)
+  sudo systemctl restart xinetd.service
+
+
+  
+  
   my url and password 
   
   url : http://192.168.1.10/nagios/
