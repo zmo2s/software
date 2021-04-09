@@ -32,3 +32,13 @@ authorized_for_all_hosts=nagiosadmin,new_user
 
 sudo systemctl restart nagios.service
   sudo systemctl restart apache2
+  
+  
+  my url and password 
+  
+  url : http://192.168.1.10/nagios/
+  
+  
+  username : newuser
+  password : a
+  
