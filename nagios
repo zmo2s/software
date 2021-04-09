@@ -1,0 +1,27 @@
+easy install 
+
+https://linuxhint.com/install_nagios_ubuntu/
+
+
+
+unzipand gedit msut be isntall on distribution  
+
+================================
+
+If you don't have permission do that : 
+
+create user 
+
+sudo htpasswd -c /etc/nagios/htpasswd.users new_user
+    # set password for user "new_user"
+    
+    
+    donner les permissions
+
+vi /usr/local/nagios/etc/cgi.cfg
+authorized_for_system_information=nagiosadmin,newuser
+authorized_for_all_services=nagiosadmin,new_user
+authorized_for_all_hosts=nagiosadmin,new_user
+
+sudo systemctl restart nagios.service
+  sudo systemctl restart apache2
