@@ -1,0 +1,7 @@
+mettre toute les foreign key en cascade sinon ça va pas marché.(sur mysqlworkbench)
+
+
+commandep our improté la bdd : 
+
+dotnet ef dbcontext scaffold "server=127.0.0.1;port=3306;user=phpmyadmin;password=password;database=voilier1" MySql.Data.EntityFrameworkCore -o voilier -f --verbose
+
