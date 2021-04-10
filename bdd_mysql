@@ -1,0 +1,21 @@
+show databases;
+drop database voilier1;
+create database voilier1;
+use voilier1;
+show tables;
+source /home/antonin/Desktop/VOILIER/test.sql
+
+
+
+commande utile pour nettoyer la table : 
+
+ delete from VoilierEtape;
+
+print data : 
+
+select * from voilier1;
+
+export db : 
+
+
+mysqldump --databases --user=root --password your_db_name > export_into_db.sql
