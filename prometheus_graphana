@@ -1,0 +1,39 @@
+install prometheus : 
+https://computingforgeeks.com/install-prometheus-server-on-debian-ubuntu-linux/
+http://192.168.1.3:9090
+
+
+http://192.168.1.3:9090/targets pour voir si tous ce passe bien coté prométhéus.
+
+install graphana : 
+
+https://computingforgeeks.com/how-to-install-grafana-on-ubuntu-debian/
+
+
+
+setup graphana with prometheus : 
+
+site web : 
+
+https://geekflare.com/fr/prometheus-grafana-setup-for-linux/
+
+complémentaire : https://xavki.blog/prometheus-grafana-tutoriaux-francais/
+
+selection dans la query du dernier prometheus qu'on a importé
+
+détaillé dnas la vidéo.
+https://www.youtube.com/watch?v=ecspEOdtPDc&t=334s
+
+url :  http://192.168.1.34:9000/ 
+et tu lui transmet la requete en "get" et non un "post" sa ne marchera pas sinon
+
+puis on doit importer les graphe de prometeus et ensuite créer un novueau graphe et selectionner la dernière version prometheus ici la prometheus3.
+(pour chaque ocnfig une version de prometheuse et créer.
+
+==commadne de teste====
+
+go_memstats_gc_cpu_fraction
+
+
+
+
