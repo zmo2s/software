@@ -1,5 +1,10 @@
+avant de se connecter en scp il faut effectuer se connecter en ssh sur le pc distant.
+
 commande scp : 
 
 sudo scp /etc/zabbix/zabbix_server.conf anto@192.168.1.25:~/Desktop
 
+sudo scp fichier_srouce_a_envoyer user@ip:dossier_destination
+
+ne marche que dnas un seul sens de la machine vers la machine extérieur.
 les ":" devant desktop sont important 
