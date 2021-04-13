@@ -1,10 +1,11 @@
-avant de se connecter en scp il faut effectuer se connecter en ssh sur le pc distant.
+avant de se connecter en scp il faut effectuer se connecter en ssh sur le pc distant sur lequelel on veut copier le fichier
 
 commande scp : 
 
 sudo scp /etc/zabbix/zabbix_server.conf anto@192.168.1.25:~/Desktop
 
-sudo scp fichier_srouce_a_envoyer user@ip:dossier_destination
+sudo scp fichier_srouce_a_envoyer user@ip_destination:dossier_destination
+et demande le mdp du pc distant 
 
 ne marche que dnas un seul sens de la machine vers la machine extérieur.
 les ":" devant desktop sont important 
