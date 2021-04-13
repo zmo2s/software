@@ -1,0 +1,5 @@
+commande scp : 
+
+sudo scp /etc/zabbix/zabbix_server.conf anto@192.168.1.25:~/Desktop
+
+les ":" devant desktop sont important 
