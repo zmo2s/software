@@ -25,3 +25,6 @@ ssh-keygen
 ssh-copy-id -i .ssh/id_rsa.pub root@samba
 on à jsute à faire du coup : 
 ssh root@samba
+
+
+
