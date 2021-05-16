@@ -1,0 +1,27 @@
+Première chose à faire sur une machine : 
+-mise a jour.
+sudo apt update
+
+Deuxième chose configuré et installer le ssh : 
+
+option -p pour changer de port: 
+ssh nom_pc@ip_adress -p port
+exemple (ssh nom_pc@192.168.2.100 -p 2300) 
+
+translation de port ssh: 
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 2300 -j DNAT --to 192.168.1.253:22
+
+autoriser le port 22 ssh: 
+iptables -I INPUT 2 -p tcp --dport 22 -j ACCEPT
+
+afficher les règles :
+iptables -nvL
+iptables -t nat nvL
+
+
+optionnelle : 
+copie de la clés public vers le pc distant (plus besoin de mot de passe) : 
+ssh-keygen
+ssh-copy-id -i .ssh/id_rsa.pub root@samba
+on à jsute à faire du coup : 
+ssh root@samba
