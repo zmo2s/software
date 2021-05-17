@@ -1,3 +1,4 @@
+OS : CentOS7
 Première chose à faire sur une machine : 
 -mise a jour.
 sudo apt update
