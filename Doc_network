@@ -37,4 +37,31 @@ on à jsute à faire du coup :
 ssh root@samba
 
 
+Troisièmement configuration de l'adresse ip statiquement :
+Nous prennons l'exemple d'un dhcp ici ,mais ça aurai pu etre un pc
+
+cd /etc/sysconfig/network-scripts
+vi ifcfg-eth0
+
+TYPE="Ethernet"
+BOOTPROTO="static"
+NAME="ens33"
+ONBOOT="yes"
+IPADDR=192.168.100.2
+NETMAK=255.255.255.0
+DNS1=8.8.8.8
+DEVICE="ens33"
+GATEWAY=192.168.100.254
+
+Troisièmement configuration de l'adresse ip Dynamiquement :
+
+cd /etc/sysconfig/network-scripts
+vi ifcfg-eth0
+
+DEVICE=eth0
+TYPE=Ethernet
+ONBOOT=yes
+NM_CONTROLLED=yes
+BOOTPROTO=dhcp
+
 
