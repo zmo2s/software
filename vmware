@@ -1,0 +1,5 @@
+vmware
+
+Les pc doivent etre dnas le meme vmnet pour se connecter a un réseaux par exemple : 
+l'ordi 1 et en vmnet1 donc le router doit avoir une interface vmnet2 pour son réseaux
+et une interface vmnet1 pour que le vmnet1 puissent se connecter.
