@@ -4,15 +4,25 @@ sudo apt update
 
 Deuxième chose configuré et installer le ssh : 
 
+ssh name_pc@ip_adress
+ssh du pc1 vers le pc2
+ssh du pc2 vers le pc1
+
 option -p pour changer de port: 
 ssh nom_pc@ip_adress -p port
 exemple (ssh nom_pc@192.168.2.100 -p 2300) 
+
+si ça ne marche on peut faire ssh sur le pc1 puis ssh sur le pc2
+(on seconnecte au router puis au server dhcp)
 
 translation de port ssh: 
 iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 2300 -j DNAT --to 192.168.1.253:22
 
 autoriser le port 22 ssh: 
 iptables -I INPUT 2 -p tcp --dport 22 -j ACCEPT
+
+sauveguarder les règles de iptables  :
+service iptables save
 
 afficher les règles :
 iptables -nvL
