@@ -1,9 +1,11 @@
 OS : CentOS7
 Première chose à faire sur une machine : 
 -mise a jour.
-sudo apt update
+sudo yum update
 
 Deuxième chose configuré et installer le ssh : 
+
+yum install openssh-server
 
 ssh name_pc@ip_adress
 ssh du pc1 vers le pc2
