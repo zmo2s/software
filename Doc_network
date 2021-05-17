@@ -42,7 +42,7 @@ Troisièmement configuration de l'adresse ip statiquement :
 Nous prennons l'exemple d'un dhcp ici ,mais ça aurai pu etre un pc
 
 cd /etc/sysconfig/network-scripts
-vi ifcfg-eth0
+vi ifcfg-ens33
 
 TYPE="Ethernet"
 BOOTPROTO="static"
@@ -58,15 +58,18 @@ Troisièmement configuration de l'adresse ip Dynamiquement:
 Nous prennons l'exemple d'un dhcp ici ,mais ça aurai pu etre un pc
 
 cd /etc/sysconfig/network-scripts
-vi ifcfg-eth0
+vi ifcfg-ens33
 
-DEVICE=eth0
+DEVICE=ens33
 TYPE=Ethernet
 ONBOOT=yes
 NM_CONTROLLED=yes
 BOOTPROTO=dhcp
 
 Ici on met dynamiquement ou statiquement l'adresse ip du server dhcp.
+
+ifdown ens33
+ifup ens33
 
 Pour chaque réseau géré en plus de celui ou est situé l'ordinateur il faut ajouté
 une interface donc ens33 et ens37 si 2 réseau , ens33 et ens37 et ens40 si trois réseaux.
