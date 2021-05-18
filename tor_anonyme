@@ -1,0 +1,3 @@
+how to change user agent tor : 
+Type about:config in the address bar. Hit enter.
+Search for privacy.resistFingerprinting and disable it.
