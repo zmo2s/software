@@ -124,6 +124,60 @@ ip_adress : static
 on a donc 3 interfaces : ens33(vmnet2)
 
 
+le router :
+-connexion :
+ssh root@192.168.166.4
+
+interface (vmnet1) il faut vérifier que l'adresse mac avec la commande "ip a" renvoie bien la meme adresse mac que celle du vmnet1
+pour cela clique droit sur notre machine router propriété on selectione vmnet advanced et on a l'adresse mac.
+
+YPE="Ethernet"
+BOOTPROTO="static"
+NAME="ens33"
+DEVICE="ens33"
+ONBOOT="yes"
+IPADDR=192.168.166.4
+;;IPADDR=192.168.100.3
+NETMASK=255.255.255.0
+GATEWAY=192.168.166.2
+DNS=8.8.8.8
+DNS1=192.168.100.2
+
+ensuite : 
+ifdown ens33
+ifup ens33
+
+
+interface (vmnet2) il faut vérifier que l'adresse mac avec la commande "ip a" renvoie bien la meme adresse mac que celle du vmnet2
+pour cela clique droit sur notre machine router propriété on selectione vmnet2 advanced et on a l'adresse mac.
+
+
+TYPE="Ethernet"
+BOOTPROTO="static"
+NAME="ens37"
+DEVICE="ens37"
+ONBOOT="yes"
+IPADDR=192.168.53.254
+NETMASK=255.255.255.0
+
+ensuite : 
+ifdown ens37
+ifup ens37
+
+interface (vmnet3) il faut vérifier que l'adresse mac avec la commande "ip a" renvoie bien la meme adresse mac que celle du vmnet2
+pour cela clique droit sur notre machine router propriété on selectione vmnet3 advanced et on a l'adresse mac.
+
+TYPE="Ethernet"
+BOOTPROTO="static"
+NAME="ens38"
+DEVICE="ens38"
+ONBOOT="yes"
+IPADDR=192.168.100.254
+NETMASK=255.255.255.0
+
+ensuite : 
+ifdown ens38
+ifup ens38
 
 
 
@@ -131,15 +185,7 @@ on a donc 3 interfaces : ens33(vmnet2)
 
 
 
-
-
-
-
-
-
-
-
-Mise en place du router : 
+ 
 
 
 
