@@ -266,6 +266,18 @@ service iptables save
 
 sudo vi /etc/dhcp/dhcpd.conf
 
+
+subnet 192.168.100.0 netmask 255.255.255.0
+{
+ authoritative;
+
+
+#adress ip du router
+      option routers 192.168.166.4; 
+      range 192.168.100.10 192.168.100.50;
+   option domain-name-servers 192.168.100.100;
+}
+
 les commandes utiles : 
 systemctl start dhcp.service
 systemctl stop dhcp.service
