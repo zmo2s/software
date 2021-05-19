@@ -236,8 +236,10 @@ afficher les règles :
 iptables -nvL
 iptables -t nat nvL
 
-
-
+#enlever le parefeu : 
+sudo systemctl status firewalld
+# désactivé SeLinux
+setenforce 0 
 
 
 
