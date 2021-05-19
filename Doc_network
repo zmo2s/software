@@ -191,6 +191,63 @@ iptables -F FORWARD
 sauveguarder les paramètre iptables : 
 service iptables save
 
+
+sudo yum –y install openssh-server openssh-clients
+(c'est bien d'isntaller le client si on veut faire du ssh sur pc1 vers pc2 pui pc2 vers pc3)
+sudo systemctl start sshd
+sudo systemctl status sshd
+sudo service ssh restart
+sudo systemctl enable sshd
+
+
+
+iptables -I INPUT 2 -p tcp --dport 22 -j ACCEPT
+
+ssh root@192.168.166.4
+
+sauveguarder les règles de iptables  :
+service iptables save
+
+
+
+pour les autres machines il faut faire uen translatino de port de l'adresse ip du routeur vers un port choisit : 
+le server dns1 aura par exemple sont port 22 redirigé vers le port 2300 
+
+la config sur le routeur : 
+
+si ça ne marche on peut faire ssh sur le pc1 puis ssh sur le pc2
+(on seconnecte au router puis au server dhcp)
+
+translation de port ssh: 
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 2300 -j DNAT --to 192.168.1.253:22
+
+config sur le serveur dns1 : 
+
+autoriser le port 22 ssh: 
+iptables -I INPUT 2 -p tcp --dport 22 -j ACCEPT
+
+config routeur : 
+iptables -I INPUT 2 -p tcp --dport 2300 -j ACCEPT
+
+sauveguarder les règles de iptables  :
+service iptables save
+
+afficher les règles :
+iptables -nvL
+iptables -t nat nvL
+
+
+
+
+
+
+
+
+
+
+
+
+
 installer dhcp : 
 yum -y install dhcp
 
@@ -202,6 +259,9 @@ on a besoin du port 67 pour le client (du coup si deux server dhcp communique il
 iptables -I INPUT 2 -p udp --dport 67 -j ACCEPT
 et du prot 68 pour le server dhcp : 
 iptables -I INPUT 2 -p udp --dport 68 -j ACCEPT
+
+sauveguarder les règles :
+service iptables save
 
 
 sudo vi /etc/dhcp/dhcpd.conf
