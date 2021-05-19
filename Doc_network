@@ -77,6 +77,68 @@ Pour chaque réseau géré en plus de celui ou est situé l'ordinateur il faut a
 une interface donc ens33 et ens37 si 2 réseau , ens33 et ens37 et ens40 si trois réseaux.
 
 
+
+pratique : 
+
+Vmware -> Edit -> virtual network editor
+vmnet1 : NAT dhcp: no subnetIpAdress : 192.168.166.0 subnet : 192.168.166.0 subnet mask : 255.255.255.0 
+NAT settings : GATEWAY IP : 192.168.166.2
+
+Chaque pc a des interfaces pour chaque réseau. Soit interface1 interface2 interface3.
+Ici le routeur aura donc sur l'interface1 le routeur l'interface2 serveur dns1 et dns2.
+Et l'interface3 pour connecter des machines de supervision si on a envie.
+
+Donc le router a le vmnet1 pour être diréctement relier à internet.
+Le router à également les vmnet 2 et vmnet 3 pour communiquer sur les deux autres réseaux.
+Le serveur dns1 et le serveur dsn2 sont sur le vmnet3 car le vmnet3 aura une configuration sur le routeur.
+Les serveur de supervision seront tous sur le vmnet2 car le vmnet 2 aura uen configuration sur le routeur.
+
+donc comme machine on a  :
+le router : 
+ip adress : 192.168.166.4
+adresse de la passerelle : 192.168.166.2 (celle qu'on a configuré dnas le vmnet1 NAT setting : GATEWAY : 192.168.166.2)
+DNS1 : 8.8.8.8
+ip_adress : static
+on a donc 3 interfaces : ens33(vmnet1) ens37(vmnet2) ens40(vmnet3)
+
+le dns1:
+ip adress : 192.168.100.2
+adresse de la passerelle : 192.168.166.253 (il faut une adresse dnas le réseua pourqu'il puissent communiqué.
+DNS1 : 8.8.8.8
+ip_adress : static
+on a donc 3 interfaces : ens33(vmnet3)
+
+
+le dns2:
+ip adress : 192.168.100.3
+adresse de la passerelle : 192.168.166.253 (il faut une adresse dnas le réseua pourqu'il puissent communiqué.
+DNS1 : 8.8.8.8
+ip_adress : static
+on a donc 3 interfaces : ens33(vmnet3)
+
+le Serveur supervision:
+ip adress : 192.168.55.3
+adresse de la passerelle : 192.168.166.253 (il faut une adresse dnas le réseua pourqu'il puissent communiqué.
+DNS1 : 8.8.8.8
+ip_adress : static
+on a donc 3 interfaces : ens33(vmnet2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Mise en place du router : 
 
 
