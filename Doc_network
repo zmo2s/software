@@ -195,10 +195,23 @@ installer dhcp :
 yum -y install dhcp
 
 démarré le dhcp et démarré le dhcp au démarrage
-service dhcpd start
-chkconfig dhcpd on
+systemctl start dhcpd.service
+systemctl enable dhcpd.service
+
+on a besoin du port 67 pour le client (du coup si deux server dhcp communique il faut le port 67 et 68) :
+iptables -I INPUT 2 -p udp --dport 67 -j ACCEPT
+et du prot 68 pour le server dhcp : 
+iptables -I INPUT 2 -p udp --dport 68 -j ACCEPT
 
 
+sudo vi /etc/dhcp/dhcpd.conf
+
+les commandes utiles : 
+systemctl start dhcp.service
+systemctl stop dhcp.service
+systemctl restart dhcp.service
+et les logs : 
+tail -f /var/log/messages
 
 
 
