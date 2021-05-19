@@ -273,6 +273,7 @@ subnet 192.168.100.0 netmask 255.255.255.0
 #adress ip du router
       option routers 192.168.166.4; 
       range 192.168.100.10 192.168.100.50;
+      # option domain name server 8.8.8.8 si aucun server dns  
    option domain-name-servers 192.168.100.100;
 }
 
