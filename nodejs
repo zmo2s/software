@@ -5,6 +5,7 @@ https://www.digitalocean.com/community/tutorials/setting-up-a-node-project-with-
 globalThis error in Typescript, how to solve : 
 npm i typescript@2.7.2 --save
 installer nodemon pour typescript pour ne pas avoir à relancer le serveur et le script pour le lancer : 
+https://futurestud.io/tutorials/typescript-use-nodemon-to-restart-your-server-on-changes
 "start": "nodemon --watch './**/*.ts' --exec 'ts-node' src/app.ts"
 configure webstorm pour pas souligner tout le code en rouge : 
 https://www.jetbrains.com/help/webstorm/developing-node-js-applications.html#ws_node_configure_local_node_interpreter
