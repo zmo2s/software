@@ -10,3 +10,71 @@ https://futurestud.io/tutorials/typescript-use-nodemon-to-restart-your-server-on
 configure webstorm pour pas souligner tout le code en rouge : 
 https://www.jetbrains.com/help/webstorm/developing-node-js-applications.html#ws_node_configure_local_node_interpreter
 https://stackoverflow.com/questions/56235533/tslint-how-to-avoid-that-all-my-code-underlined-in-red
+squelize pour typescript : 
+https://sequelize.org/master/manual/typescript.html
+https://sequelize.org/master/manual/migrations.html
+pour impoter la database  : 
+https://github.com/sequelize/sequelize-auto
+sequelize-auto-models -h localhost -d hello_world -u root -x password -p 3306  --dialect mysql
+
+
+
+
+
+  790  node app.js
+  791  touch socket.js
+  792  cd ..
+  793  node start
+  794  node app.js
+  795  touch sql.hs
+  796  touch derniere_date.ejs
+  797  mysql -u phpmyadmin -pClementine1011%
+  798  node app.js
+  799  node app.js
+  800  mkdir node_project
+  801  cd node_project
+  802  npm init
+  803  npm init -y
+  804  npm install -D typescript@3.3.3
+  805  npm install -D tslint@5.12.1
+  806  npm install -S express@4.16.4
+  807  npm install -D @types/express@4.16.1
+  808  cd
+  809  touch tsconfig.json
+  810  vi tsconfig.json 
+  811  /node_modules/.bin/tslint --init
+  812  cd node_project/
+  813  /node_modules/.bin/tslint --init
+  814  ./node_modules/.bin/tslint --init
+  815  mkdir src
+  816  touch src/app.ts
+  817  npm start
+  818  npm install @types/node
+  819  npm start
+
+ npm i typescript@2.7.2 --save
+
+npm install nodemon 
+npm i -D nodemon ts-node 
+npm install --save sequelize
+npm install sequelize reflect-metadata sequelize-typescript
+ npm install --save mysql2
+
+ npm install --save-dev @types/node @types/validator
+
+sudo npm install -g sequelize-cli
+fichier configuration /config/config.json remplir mot de passe bdd etc ... : 
+sequelize init
+
+
+
+vérifier la connection à sequelize et a push les mdofication de la db: 
+sequelize db:migrate
+
+create model : 
+npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string
+
+sudo npm install -g sequelize-cli-typescript
+npm install -g mysql
+ sudo npm install -g sequelize-auto-models
+
