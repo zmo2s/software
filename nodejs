@@ -9,3 +9,4 @@ https://futurestud.io/tutorials/typescript-use-nodemon-to-restart-your-server-on
 "start": "nodemon --watch './**/*.ts' --exec 'ts-node' src/app.ts"
 configure webstorm pour pas souligner tout le code en rouge : 
 https://www.jetbrains.com/help/webstorm/developing-node-js-applications.html#ws_node_configure_local_node_interpreter
+https://stackoverflow.com/questions/56235533/tslint-how-to-avoid-that-all-my-code-underlined-in-red
