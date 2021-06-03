@@ -1,2 +1,84 @@
 Vue3.js 
 compiler les fichiers : npm run build
+
+
+route : 
+si pas installer : 
+npm install -g @vue/cli
+
+crée un projet : 
+ vue create my-router-project
+ (bien choisr vue3 attention)
+ 
+ cd my-router-project
+ npm i vue-router@next
+
+
+
+crée dossier router : 
+/src/router/index.js
+
+import { createWebHistory, createRouter } from "vue-router";
+import Home from "@/views/Home.vue";
+import About from "@/views/About.vue";
+
+const routes = [
+  {
+    path: "/",
+    name: "Home",
+    component: Home,
+  },
+  {
+    path: "/about",
+    name: "About",
+    component: About,
+  },
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
+
+export default router;
+
+
+
+src/main.js
+
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router' // <--- AJOUTER LE ROUTER !
+
+createApp(App).use(router).mount('#app') // <-- AJOUTER LE ROUTER LA AUSSI IMPORTANT !!!
+
+
+/src/App.vue
+(dans App.vue on peut tous supprimer)
+
+
+<template>
+  <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+  </div>
+  <router-view />
+</template>
+
+
+/src/views/Home.vue
+
+<template>
+  <h1>Home Page</h1>
+</template>
+
+
+/src/views/About.vue
+
+<template>
+  <h1>About Page</h1>
+</template>
+
+
+https://www.vuemastery.com/blog/vue-router-a-tutorial-for-vue-3/
+
