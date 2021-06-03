@@ -12,8 +12,8 @@ crée un projet :
  
  cd my-router-project
  npm i vue-router@next
-
-
+ npm install postcss@^8.0.0
+ (postcss a isntaller car il est necessaire pour installer router@next
 
 crée dossier router : 
 /src/router/index.js
