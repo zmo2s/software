@@ -1,0 +1,34 @@
+sequelize db:migrate
+
+check if local parameter login for database work (don't run it with file inside model or they will push to database)
+
+sequelize-auto-models -h localhost -d hello_world -u root -x password -p 3306  --dialect mysql
+
+in the file index.js we need to change the var sequelize = require('config/config.js)'  by the line below : 
+
+      const sequelize = new Sequelize('hello_world', 'phpmyadmin', 'Clementine1011%', {
+          host: 'localhost',
+          dialect: 'mysql',
+          operatorsAliases: false,
+
+          pool: {
+              max: 5,
+              min: 0,
+              acquire: 30000,
+              idle: 10000
+          },
+      });
+
+
+
+
+
+
+
+typescript : 
+
+
+we can add option below for have typescript code, we need to delete "type" for all the import.
+
+
+-l ts 
