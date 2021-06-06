@@ -15,8 +15,6 @@ https://sequelize.org/master/manual/typescript.html
 https://sequelize.org/master/manual/migrations.html
 pour impoter la database  : 
 https://github.com/sequelize/sequelize-auto
-sequelize-auto-models -h localhost -d hello_world -u root -x password -p 3306  --dialect mysql
-
 
 
 
