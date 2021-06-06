@@ -1,8 +1,10 @@
-sequelize db:migrate
+ sequelize db:migrate --config "./config/config.json"
+ 
+ 
 
 check if local parameter login for database work (don't run it with file inside model or they will push to database)
 
-sequelize-auto-models -h localhost -d hello_world -u root -x password -p 3306  --dialect mysql
+sequelize-auto -h localhost -d forum -u root -x password -p 3306  --dialect mysql -c "./config/config.json"
 
 in the file index.js we need to change the var sequelize = require('config/config.js)'  by the line below : 
 
@@ -32,3 +34,17 @@ we can add option below for have typescript code, we need to delete "type" for a
 
 
 -l ts 
+
+
+
+env.js : 
+
+const Sequelize = require("sequelize");
+
+const sequelize = new Sequelize("forum", "root", "password", {
+    host: "localhost",
+    dialect: "mysql"
+});
+
+module.exports = sequelize;
+
