@@ -1,0 +1,6 @@
+sqp_73c5a6c8e52cf917cde7efacac10926aa76197a7
+dotnet tool install --global dotnet-sonarscanner
+dotnet sonarscanner begin /k:"c" /d:sonar.host.url="http://localhost:9000"  /d:sonar.login="sqp_73c5a6c8e52cf917cde7efacac10926aa76197a7" /d:sonar.flex.cobertura.reportPaths=CoverageReports/cobertura.xml /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
+dotnet build
+dotnet-coverage collect 'dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover' -f xml  -o 'coverage.xml'
+dotnet sonarscanner end /d:sonar.login="sqp_73c5a6c8e52cf917cde7efacac10926aa76197a7"
